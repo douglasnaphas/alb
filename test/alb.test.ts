@@ -22,8 +22,8 @@ test("can instantiate stack", () => {
   // https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-elasticloadbalancingv2.ApplicationLoadBalancer.html#logwbraccesswbrlogsbucket-prefix
   // We do this by setting env.region to AWS_DEFAULT_REGION when we instantiate
   // the stack.
-  process.env.DEV_AWS_DEFAULT_REGION = "us-east-1";
+  process.env.AWS_DEFAULT_REGION = "us-east-1";
   const stack = new Alb.AlbStack(app, "MyTestAlbStack", {
-    env: { region: process.env.DEV_AWS_DEFAULT_REGION },
+    env: { region: process.env.AWS_DEFAULT_REGION },
   });
 });
