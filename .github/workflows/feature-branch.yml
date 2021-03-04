@@ -51,7 +51,7 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.DEV_AWS_DEFAULT_REGION }}
         run: |
           npx cdk bootstrap
-          npx cdk diff
+          npx cdk deploy --require-approval never
 
       - name: Run integration tests (dev account)
         working-directory: scripts
