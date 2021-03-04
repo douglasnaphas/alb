@@ -14,7 +14,7 @@ export class AlbStack extends cdk.Stack {
     });
     lb.logAccessLogs(accessLogBucket);
     const listener = lb.addListener("HttpsListener", {
-      port: 443,
+      port: 80,
       open: true,
     });
     listener.addAction("DefaultAction", {
