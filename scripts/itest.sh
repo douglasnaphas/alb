@@ -1,7 +1,7 @@
 #!/bin/bash
 
 STACKNAME=$(npx @cdk-turnkey/stackname@1.2.0)
-APP_URL=https://$(aws cloudformation describe-stacks \
+APP_URL=http://$(aws cloudformation describe-stacks \
   --stack-name ${STACKNAME} | \
   jq '.Stacks[0].Outputs | map(select(.OutputKey == "loadBalancerDnsName"))[0].OutputValue' | \
   tr -d \")

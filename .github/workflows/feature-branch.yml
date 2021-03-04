@@ -53,11 +53,6 @@ jobs:
           npx cdk bootstrap
           npx cdk diff
 
-      - name: Install itest
-        working-directory: itest
-        run: |
-          npm install
-
       - name: Run integration tests (dev account)
         working-directory: scripts
         env:
