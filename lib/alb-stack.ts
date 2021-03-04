@@ -35,5 +35,8 @@ export class AlbStack extends cdk.Stack {
     new cdk.CfnOutput(this, "loadBalancerDnsName", {
       value: lb.loadBalancerDnsName,
     });
+    new cdk.CfnOutput(this, "logBucketName", {
+      value: accessLogBucket.bucketName,
+    });
   }
 }
